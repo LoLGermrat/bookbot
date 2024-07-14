@@ -19,8 +19,16 @@ def count_char(this_book):
     
     return letter_dict
 
+"""
+Create a function that accepts a dictionary, sets it to a list of individual dictionaries, then in that list sorts via key:value retrurn that in a report 
+where it shows the letter most counted is on top and least is at the bottom
+"""
+def book_report(book_dict):
+    lst_dict = []
+    for key, value in book_dict.items():
+        if key.isalpha():
+            lst_dict.append({key:value})
+    return lst_dict
 
-#print(count_words(main()))
 
-count_char(main())
 
