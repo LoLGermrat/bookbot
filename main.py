@@ -20,15 +20,32 @@ def count_char(this_book):
     return letter_dict
 
 """
+This is current dictionary: {letter:count}
+
+this is what I want to change sturcture of dictionary to {char:"letter", count:0}
+"""
+
+"""
 Create a function that accepts a dictionary, sets it to a list of individual dictionaries, then in that list sorts via key:value retrurn that in a report 
 where it shows the letter most counted is on top and least is at the bottom
 """
 def book_report(book_dict):
     lst_dict = []
-    for key, value in book_dict.items():
+    for key , value in book_dict.items():
+        temp_dict= {"char" : key, "count" : value}
         if key.isalpha():
-            lst_dict.append({key:value})
-    return lst_dict
+            lst_dict.append(temp_dict)
+    print(f"{lst_dict=}")
 
+    test_lst = sorted(lst_dict, reverse=True, key=sort_on)
+    
 
+    return
+    
 
+        
+
+def sort_on(dict):
+    return dict["count"]
+
+print(book_report(count_char(main())))
