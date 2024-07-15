@@ -35,10 +35,15 @@ def book_report(book_dict):
         temp_dict= {"char" : key, "count" : value}
         if key.isalpha():
             lst_dict.append(temp_dict)
-    print(f"{lst_dict=}")
 
     test_lst = sorted(lst_dict, reverse=True, key=sort_on)
     
+    print("--- Begin report of books/frankenstein.txt ---")
+    print(f"{count_words(main())} words found in the document")
+    print()
+    for items in test_lst:
+        print(f"The '{items['char']}' character was found {items['count']} times")
+    print("--- End report ---")
 
     return
     
@@ -48,4 +53,4 @@ def book_report(book_dict):
 def sort_on(dict):
     return dict["count"]
 
-print(book_report(count_char(main())))
+book_report(count_char(main()))
