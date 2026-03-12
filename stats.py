@@ -9,4 +9,8 @@ def get_letter_dict(text):
         if l not in letter_dict:
             letter_dict[l] = 0
         letter_dict[l] += 1
+    
+    for char , count in letter_dict.items():
+       print(f"{char}: {count}")
+    
     return letter_dict
